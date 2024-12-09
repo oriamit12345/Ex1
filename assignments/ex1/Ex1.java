@@ -36,7 +36,7 @@ public class Ex1 {
         char Base = MYnumber.charAt(siz);
         char Limit = MYnumber.charAt(siz - 1);
 
-        for (int i = 0 ; i < siz ; i = i + 1  ){
+        for (int i = 0 ; i <= siz ; i = i + 1  ){
             if( '0' < MYnumber.charAt(i) && MYnumber.charAt(i) <'9' ){
                 return true;
             }
