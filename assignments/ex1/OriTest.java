@@ -29,7 +29,7 @@ public class OriTest {
             assertTrue(ok);
         }
 
-        String[] NOT_GOOD = {"b2", "2b2"};
+        String[] NOT_GOOD = {"b2", "2b2","abB", "!@b2","1bb2"};
         for (int i = 0; i < NOT_GOOD.length; i = i + 1) {
             boolean not_ok = Ori.Number_with_base(NOT_GOOD[i]);
             assertFalse(not_ok);

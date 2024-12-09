@@ -34,7 +34,7 @@ public class Ori {
         if (Limit == 'b' && ('1' < Base && Base <= '9' || 'A' <= Base && Base <= 'G')) {
             for (int i = 0; i < (siz - 1); i = i + 1) {
                 char Key = MYnumber.charAt(i);
-                if (('0' <= Key && Key <= '9' || 'A' <= Key && Key <= 'G') && Key < Base) {
+                if (('0' <= Key && Key <= '9' || 'A' <= Key && Key < 'G') && Key < Base) {
                     return true;
                 }
             }
