@@ -1,3 +1,5 @@
+package assignments.ex1;
+
 public class ori {
 
     public static void main(String[] args) {
