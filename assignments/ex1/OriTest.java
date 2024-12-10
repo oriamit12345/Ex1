@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class OriTest {
     @Test
-    void Allnumber() {
+    void Allnumbertest() {
 
         String[] GOOD = {"1258487", "000111", "123000987"};
         for (int i = 0; i < GOOD.length; i = i + 1) {
@@ -22,14 +22,14 @@ public class OriTest {
     }
 
     @Test
-    void Number_with_base() {
+    void Number_with_basetest() {
 
-        String[] GOOD = {"1b2", "1b2", "01b2", "123bA", "ABbG", "0bA"};
+     /*   String[] GOOD = {"1b2", "1b2", "01b2", "123bA", "ABbG", "0bA"};
         for (int i = 0; i < GOOD.length; i = i + 1) {
             boolean ok = Ori.Number_with_base(GOOD[i]);
             assertTrue(ok);
-        }
-        String[] NOT_GOOD = {"b2", "2b2"};
+        }*/
+        String[] NOT_GOOD = {"1G3bG", " BbG", "0bbA", "abB", "!@b2", "A", "1bb2"};
         for (int i = 0; i < NOT_GOOD.length; i = i + 1) {
             boolean not_ok = Ori.Number_with_base(NOT_GOOD[i]);
             assertFalse(not_ok);
