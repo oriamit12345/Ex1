@@ -28,16 +28,19 @@ public class Ori {
 
     public static boolean Number_with_base(String MYnumber) {
 
-        int siz = MYnumber.length() - 1;
-        char Base = MYnumber.charAt(siz);
-        char Limit = MYnumber.charAt(siz - 1);
-        if (Limit == 'b' && ('1' < Base && Base <= '9' || 'A' <= Base && Base <= 'G')) {
-            for (int i = 0; i < (siz - 1); i = i + 1) {
-                char Key = MYnumber.charAt(i);
-                if (('0' <= Key && Key <= '9' || 'A' <= Key && Key < 'G') && Key < Base) {
-                    return true;
+        int siz = MYnumber.length();
+        if (siz > 2) {
+            char base = MYnumber.charAt(siz - 1);
+            char limit = MYnumber.charAt(siz - 2);
+            if ((limit == 'b') && ('1' <base && base <= '9' || 'A' <= base && base <= 'G')) {
+                for (int i = 0; i < siz - 2; i = i + 1) {
+                    char Key = MYnumber.charAt(i);
+                    if (('0' <= Key && Key <= '9' || 'A' <= Key && Key < 'G') && (Key < base)) {
+                        return true;
+                    }
                 }
             }
+            return false;
         }
         return false;
     }
