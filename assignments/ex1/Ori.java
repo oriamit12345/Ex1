@@ -2,6 +2,7 @@ package assignments.ex1;
 
 public class Ori {
 
+
     public static boolean isNumber(String MYnumber) {
         if (All_number(MYnumber)) {
             return true;
@@ -11,6 +12,8 @@ public class Ori {
         }
         return false;
     }
+
+
 
     public static boolean All_number(String MYnumber) {
         int siz = MYnumber.length() ;
@@ -24,13 +27,14 @@ public class Ori {
         return false;
     }
 
+
     public static boolean Number_with_base(String MYnumber) {
         int siz = MYnumber.length();
         if (siz > 2) {
             char base = MYnumber.charAt(siz - 1);
             char limit = MYnumber.charAt(siz - 2);
             int sum = 0;
-            if ((limit == 'b') && (check_base(base)) {
+            if ((limit == 'b') && (check_base(base))) {
                 for (int i = 0; i < siz - 2; i = i + 1) {
                     char Key = MYnumber.charAt(i);
                     if (('0' <= Key && Key <= '9' || 'A' <= Key && Key < 'G') && (Key < base)) {
@@ -45,7 +49,16 @@ public class Ori {
         }
         return false;
     }
-   public static int number2Int(String MYnumber1) {
+
+
+    public static boolean check_base(char base){
+        if(('1' < base && base <= '9' ) || ('A' <= base && base <= 'G')){
+            return true;
+        }
+        return false;
+    }
+
+    public static int number2Int(String MYnumber1) {
         if(All_number(MYnumber1) ){
             int decimal_value = Integer.parseInt(MYnumber1, 10);
             return decimal_value;
@@ -64,30 +77,43 @@ public class Ori {
         }
         int decimal_value1 = Integer.parseInt(s_num,i_base);
         return decimal_value1;
-        int ans = -1;
+       // int ans = -1;
     }
 
 
     public static String int2Number(int num, int base) {
-        int result = num ;
-        int remainder ;
-        int counter = 0 ;
-        char[] waste_collection = new char [32] ;
-        while (result != 0){
-            remainder = result % base ;
+        if ((1 < base && base <= 16 )) {
+            int result = num;
+            int remainder;
+            int counter = 0;
+            char[] waste_collection = new char[32];
+            while (result != 0) {
+                remainder = result % base;
+                if ( remainder < 10) {
+                    remainder = remainder + 48;
+                }
+                else {
+                    remainder = remainder + 55;
+                }
+                char ch_remainder = (char) remainder ;
+                waste_collection [counter] = ch_remainder ;
+                result = result / base;
+                counter = counter + 1;
+            }
 
-            result = result / base ;
-            counter =  counter +1 ;
-
+            char[] good_collection = new char[counter] ;
+            int j = counter;
+            for( int i = 0 ; i <= counter  ; i = i + 1 ){
+                good_collection[i] = waste_collection [j] ;
+                j = j - 1 ;
+            }
+            String num_in_base = new String(good_collection);
+            return num_in_base ;
         }
+        return "ERR: wrong base, should be [2,16], got (*////*)" ;
+    }
 
-    }
-    public static boolean check_base(char base){
-       if (('1' < base && base <= '9' ) || ('A' <= base && base <= 'G')){
-           return true;
-       }
-        return false;
-    }
 }
+
 
 
