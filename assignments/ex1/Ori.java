@@ -30,7 +30,7 @@ public class Ori {
             char base = MYnumber.charAt(siz - 1);
             char limit = MYnumber.charAt(siz - 2);
             int sum = 0;
-            if ((limit == 'b') && (('1' < base && base <= '9')  || ('A' <= base && base <= 'G'))) {
+            if ((limit == 'b') && (check_base(base)) {
                 for (int i = 0; i < siz - 2; i = i + 1) {
                     char Key = MYnumber.charAt(i);
                     if (('0' <= Key && Key <= '9' || 'A' <= Key && Key < 'G') && (Key < base)) {
@@ -52,7 +52,7 @@ public class Ori {
 
         }
 
-        int siz = MYnumber1.length();
+        int siz = MYnumber1.length() ;
         String s_num = MYnumber1.substring(0,siz -2);
         char c_base = MYnumber1.charAt(siz- 1);
         int i_base;
@@ -64,7 +64,30 @@ public class Ori {
         }
         int decimal_value1 = Integer.parseInt(s_num,i_base);
         return decimal_value1;
+        int ans = -1;
     }
-    int ans = -1;
+
+
+    public static String int2Number(int num, int base) {
+        int result = num ;
+        int remainder ;
+        int counter = 0 ;
+        char[] waste_collection = new char [32] ;
+        while (result != 0){
+            remainder = result % base ;
+
+            result = result / base ;
+            counter =  counter +1 ;
+
+        }
+
+    }
+    public static boolean check_base(char base){
+       if (('1' < base && base <= '9' ) || ('A' <= base && base <= 'G')){
+           return true;
+       }
+        return false;
+    }
 }
+
 
