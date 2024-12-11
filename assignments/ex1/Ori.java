@@ -53,17 +53,16 @@ public class Ori {
         }
 
         int siz = MYnumber1.length();
-        String s1_num = MYnumber1.substring(0,siz -2);
-        char c1_base = MYnumber1.charAt(siz- 1);
-        int i1_base;
-        if(c1_base <= '9'){
-            i1_base = c1_base - '0';
+        String s_num = MYnumber1.substring(0,siz -2);
+        char c_base = MYnumber1.charAt(siz- 1);
+        int i_base;
+        if(c_base <= '9'){
+            i_base = c_base - '0';
         }
         else {
-            i1_base = c1_base - '7';
+            i_base = c_base - '7';
         }
-
-        int decimal_value1 = Integer.parseInt(s1_num,i1_base);
+        int decimal_value1 = Integer.parseInt(s_num,i_base);
         return decimal_value1;
     }
     int ans = -1;
