@@ -1,6 +1,11 @@
 package assignments.ex1;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.shadow.com.univocity.parsers.annotations.Convert;
+
+import static java.util.function.Predicate.isEqual;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -37,13 +42,13 @@ public class OriTest {
 
 
     }
-    @Test
+   @ParameterizedTest
+   @Convert({ })
     void number_to_int_test() {
-        String[] str_numbers = {"1b2", "01b2", "123bA", "ABbG", "0bA"};
-        int [] solutions = {1,1,123,171,0};
-        for (int i = 0; i < str_numbers.length; i = i + 1) {
-            int result = Ori.number2Int(str_numbers[i]);
-            assertee
+
+
+
+            assertTrue(isEqual( , ));
         }
     }
 }
