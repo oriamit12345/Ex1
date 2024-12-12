@@ -1,5 +1,7 @@
 package assignments.ex1;
 
+import java.util.Arrays;
+
 /**
  * This class represents a simple solution for Ex1.
  * As defined here: https://docs.google.com/document/d/1AJ9wtnL1qdEs4DAKqBlO1bXCM6r6GJ_J/r/edit/edit
@@ -98,7 +100,15 @@ public class Ex1 {
                 loca_go = loca_go - 1 ;
             }
             String num_in_base = new String(good_collection);
-            return num_in_base + "b" + st_base ;
+            int base_1 ;
+            if(base <= 9){
+               base_1 = base + '0' ;
+            }
+            else {
+                base_1 = base + '7' ;
+            }
+            char ch_base_1 = (char) base_1 ;
+            return num_in_base + "b" + ch_base_1 ;
         }
         return "ERR: wrong base, should be [2,16], got (" + st_base + ')' ;
     }
@@ -127,12 +137,16 @@ public class Ex1 {
      * @param arr an array of numbers
      * @return the index in the array in with the largest number (in value).
      */
-    public static int maxIndex(String[] arr) {
-        int ans = 0;
-        // add your code here
-
-        ////////////////////
-        return ans;
+    public static int maxIndex(String[] st_arr) {
+        int int_max_arr = Ex1.number2Int(st_arr [0]);
+        int int_max_arr_check ;
+        for(int i = 0 ; i < st_arr.length ; i = i + 1 ){
+            int_max_arr_check = Ex1.number2Int(st_arr [i]);
+            if (int_max_arr < int_max_arr_check ){
+                int_max_arr = int_max_arr_check ;
+            }
+        }
+        return int_max_arr ;
     }
 
     public static boolean All_number(String MY_number1) {
@@ -172,4 +186,6 @@ public class Ex1 {
         }
         return false;
     }
+
+
 }
