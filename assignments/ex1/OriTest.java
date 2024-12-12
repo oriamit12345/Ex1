@@ -51,14 +51,16 @@ public class OriTest {
     }
     @Test
     void int2Number_test() {
-        String[] s1_arr = {"1b2","01b2", "123bA", "ABbG", "0bA", "589","58BA"};
-        int[] s1_true_arr ={1,1,123,171,0,589,-1};
+        int[] i1_number_arr ={728,728,42,100,2020};
+        int[] i1_base_arr ={16,4,2,2,16};
+        String[] s1_true_arr = {"2D8","23120", "101010", "1100100", "7E4"};
 
-        for(int i = 0; i < s1_arr.length; i = i + 1){
-            String s1 = s1_arr [i] ;
-            int s1_result_int = Ori.number2Int(s1);
-            int s1_true = s1_true_arr [i] ;
-            assertEquals(s1_true, s1_result_int, "numbers not match! expected value was: " + s1_true + " received: " + s1_result_int);
+        for(int i = 0; i < i1_number_arr.length; i = i + 1){
+            int in1_base = i1_base_arr [i] ;
+            int in1_number = i1_number_arr [i] ;
+            String s1_result_str = Ori.int2Number(in1_number, in1_base) ;
+            String s1_true = s1_true_arr [i] ;
+            assertEquals(s1_true, s1_result_str, "numbers not match! expected value was: " + s1_true + " received: " + s1_result_str);
         }
     }
 }

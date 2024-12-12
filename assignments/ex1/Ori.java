@@ -105,10 +105,10 @@ public class Ori {
             }
 
             char[] good_collection = new char[counter] ;
-            int j = counter;
-            for( int i = 0 ; i <= counter  ; i = i + 1 ){
-                good_collection[i] = waste_collection [j] ;
-                j = j - 1 ;
+            int loca_go = counter - 1 ;
+            for( int loca_wa = 0 ; loca_wa < counter  ; loca_wa = loca_wa + 1 ){
+                good_collection[loca_wa] = waste_collection [loca_wa] ;
+                loca_go = loca_go - 1 ;
             }
             String num_in_base = new String(good_collection);
             return num_in_base ;
