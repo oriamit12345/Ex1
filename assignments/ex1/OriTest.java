@@ -51,9 +51,9 @@ public class OriTest {
     }
     @Test
     void int2Number_test() {
-        int[] i1_number_arr ={728,728,42,100,2020};
-        int[] i1_base_arr ={16,4,2,2,16};
-        String[] s1_true_arr = {"2D8","23120", "101010", "1100100", "7E4"};
+        int[] i1_number_arr ={728,728,42,100,2020,256,17};
+        int[] i1_base_arr ={16,4,2,2,16,8,17};
+        String[] s1_true_arr = {"2D8","23120", "101010", "1100100", "7E4","400","ERR: wrong base, should be [2,16], got (17)"};
 
         for(int i = 0; i < i1_number_arr.length; i = i + 1){
             int in1_base = i1_base_arr [i] ;
@@ -64,7 +64,6 @@ public class OriTest {
         }
     }
 }
-
 
 
 
