@@ -80,44 +80,42 @@ public class Ori {
             int decimal_value1 = Integer.parseInt(st1_num, int_base);
             return decimal_value1;
         }
-
         int unlawful = -1;
         return unlawful;
     }
 
-        public static String int2Number(int num, int base) {
-            if ((1 < base && base <= 16 )) {
-                int result = num;
-                int remainder;
-                int counter = 0;
-                char[] waste_collection = new char[32];
-                while (result != 0) {
-                    remainder = result % base;
-                    if ( remainder < 10) {
-                        remainder = remainder + 48;
-                    }
-                    else {
-                        remainder = remainder + 55;
-                    }
-                    char ch_remainder = (char) remainder ;
-                    waste_collection [counter] = ch_remainder ;
-                    result = result / base;
-                    counter = counter + 1;
+    public static String int2Number(int num, int base) {
+        if ((1 < base && base <= 16 )) {
+            int result = num;
+            int remainder;
+            int counter = 0;
+            char[] waste_collection = new char[32];
+            while (result != 0) {
+                remainder = result % base;
+                if ( remainder < 10) {
+                    remainder = remainder + 48;
                 }
-
-                char[] good_collection = new char[counter] ;
-                int j = counter;
-                for( int i = 0 ; i <= counter  ; i = i + 1 ){
-                    good_collection[i] = waste_collection [j] ;
-                    j = j - 1 ;
+                else {
+                    remainder = remainder + 55;
                 }
-                String num_in_base = new String(good_collection);
-                return num_in_base ;
+                char ch_remainder = (char) remainder ;
+                waste_collection [counter] = ch_remainder ;
+                result = result / base;
+                counter = counter + 1;
             }
-            return "ERR: wrong base, should be [2,16], got (" + base + ')' ;
-        }
 
+            char[] good_collection = new char[counter] ;
+            int j = counter;
+            for( int i = 0 ; i <= counter  ; i = i + 1 ){
+                good_collection[i] = waste_collection [j] ;
+                j = j - 1 ;
+            }
+            String num_in_base = new String(good_collection);
+            return num_in_base ;
+        }
+        return "ERR: wrong base, should be [2,16], got (" + base + ')' ;
     }
+}
 
 
 

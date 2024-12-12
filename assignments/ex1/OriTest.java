@@ -39,15 +39,26 @@ public class OriTest {
     }
     @Test
     void number2Int_test() {
-        String[] s1_arr = {"1b2","01b2", "123bA", "ABbG", "0bA"};
-        int[] s1_true_arr ={1,1,123,171,0};
+        String[] s1_arr = {"1b2","01b2", "123bA", "ABbG", "0bA", "589","58BA"};
+        int[] s1_true_arr ={1,1,123,171,0,589,-1};
 
         for(int i = 0; i < s1_arr.length; i = i + 1){
             String s1 = s1_arr [i] ;
             int s1_result_int = Ori.number2Int(s1);
             int s1_true = s1_true_arr [i] ;
-            assertEquals(s1_true, s1_result_int);
+            assertEquals(s1_true, s1_result_int, "numbers not match! expected value was: " + s1_true + " received: " + s1_result_int);
+        }
+    }
+    @Test
+    void int2Number_test() {
+        String[] s1_arr = {"1b2","01b2", "123bA", "ABbG", "0bA", "589","58BA"};
+        int[] s1_true_arr ={1,1,123,171,0,589,-1};
 
+        for(int i = 0; i < s1_arr.length; i = i + 1){
+            String s1 = s1_arr [i] ;
+            int s1_result_int = Ori.number2Int(s1);
+            int s1_true = s1_true_arr [i] ;
+            assertEquals(s1_true, s1_result_int, "numbers not match! expected value was: " + s1_true + " received: " + s1_result_int);
         }
     }
 }
