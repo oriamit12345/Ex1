@@ -3,11 +3,11 @@ package assignments.ex1;
 public class Ori {
 
 
-    public static boolean isNumber(String MYnumber) {
-        if (All_number(MYnumber)) {
+    public static boolean isNumber(String MY_number) {
+        if (All_number(MY_number)) {
             return true;
         }
-        if (Number_with_base(MYnumber)){
+        if (Number_with_base(MY_number)){
             return true;
         }
         return false;
@@ -15,11 +15,14 @@ public class Ori {
 
 
 
-    public static boolean All_number(String MYnumber) {
-        int siz = MYnumber.length() ;
+    public static boolean All_number(String MY_number1) {
+        int siz = MY_number1.length() ;
+        int counter = 0 ;
         for (int i = 0; i < siz; i = i + 1) {
-            if ('0' >= MYnumber.charAt(i) && MYnumber.charAt(i) <= '9') {
-                if (i == siz - 1) {
+            char candidate = MY_number1.charAt(i);
+            if ('0' <= candidate && candidate <= '9') {
+                counter = counter + 1 ;
+                if (counter == siz) {
                     return true;
                 }
             }
@@ -28,15 +31,15 @@ public class Ori {
     }
 
 
-    public static boolean Number_with_base(String MYnumber) {
-        int siz = MYnumber.length();
+    public static boolean Number_with_base(String MY_number2) {
+        int siz = MY_number2.length();
         if (siz > 2) {
-            char base = MYnumber.charAt(siz - 1);
-            char limit = MYnumber.charAt(siz - 2);
+            char base = MY_number2.charAt(siz - 1);
+            char limit = MY_number2.charAt(siz - 2);
             int sum = 0;
             if ((limit == 'b') && (check_base(base))) {
                 for (int i = 0; i < siz - 2; i = i + 1) {
-                    char Key = MYnumber.charAt(i);
+                    char Key = MY_number2.charAt(i);
                     if (('0' <= Key && Key <= '9' || 'A' <= Key && Key < 'G') && (Key < base)) {
                         sum = sum + 1;
                     }
@@ -58,27 +61,27 @@ public class Ori {
         return false;
     }
 
-    public static int number2Int(String MYnumber1) {
-        if(All_number(MYnumber1) ){
-            int decimal_value = Integer.parseInt(MYnumber1, 10);
+    public static int number2Int(String MY_number3) {
+        if (All_number(MY_number3)){
+        if(All_number(MY_number3) ){
+            int decimal_value = Integer.parseInt(MY_number3, 10);
             return decimal_value;
-
         }
-
-        int siz = MYnumber1.length() ;
-        String s_num = MYnumber1.substring(0,siz -2);
-        char c_base = MYnumber1.charAt(siz- 1);
-        int i_base;
-        if(c_base <= '9'){
-            i_base = c_base - '0';
+        int siz = MY_number3.length() ;
+        String s_num = MY_number3.substring(0,siz -2);
+        char char_base = MY_number3.charAt(siz- 1);
+        int int_base;
+        if(char_base <= '9'){
+            int_base = char_base - '0';
         }
         else {
-            i_base = c_base - '7';
+            int_base = char_base - '7';
         }
-        int decimal_value1 = Integer.parseInt(s_num,i_base);
+        int decimal_value1 = Integer.parseInt(s_num,int_base);
         return decimal_value1;
        // int ans = -1;
-    }
+    }  int unlawful = - 1;
+        return
 
 
     public static String int2Number(int num, int base) {
