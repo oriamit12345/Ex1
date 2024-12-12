@@ -51,12 +51,14 @@ public class Ex1 {
      * @param a a String representing a number
      * @return true iff the given String is in a number format
      */
-    public static boolean isNumber(String a) {
-        boolean ans = true;
-        // add your code here
-
-        ////////////////////
-        return ans;
+    public static boolean isNumber(String MY_number) {
+        if (All_number(MY_number)) {
+            return true;
+        }
+        if (Number_with_base(MY_number)) {
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -69,6 +71,7 @@ public class Ex1 {
      * @return a String representing a number (in base) equals to num, or an empty String (in case of wrong input).
      */
     public static String int2Number(int num, int base) {
+        String st_base =  Integer.toString(base);
         if ((1 < base && base <= 16 )) {
             int result = num;
             int remainder;
@@ -95,9 +98,8 @@ public class Ex1 {
                 loca_go = loca_go - 1 ;
             }
             String num_in_base = new String(good_collection);
-            return num_in_base ;
+            return num_in_base + "b" + st_base ;
         }
-        String st_base =  Integer.toString(base); ;
         return "ERR: wrong base, should be [2,16], got (" + st_base + ')' ;
     }
 
@@ -132,19 +134,6 @@ public class Ex1 {
         ////////////////////
         return ans;
     }
-
-
-
-    public static boolean isNumber(String MY_number) {
-        if (All_number(MY_number)) {
-            return true;
-        }
-        if (Number_with_base(MY_number)) {
-            return true;
-        }
-        return false;
-    }
-
 
     public static boolean All_number(String MY_number1) {
         int siz = MY_number1.length();
