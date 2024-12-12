@@ -48,7 +48,7 @@ public class Ex1 {
     /**
      * This static function checks if the given String (g) is in a valid "number" format.
      *
-     * @param a a String representing a number
+     * @param a String representing a number
      * @return true iff the given String is in a number format
      */
     public static boolean isNumber(String MY_number) {
