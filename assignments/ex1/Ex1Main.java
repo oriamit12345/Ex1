@@ -39,7 +39,7 @@ public class Ex1Main {
                                 int base = in.nextInt();
 
                                 // Ensure the base is within the valid range (2,16]
-                                if ((1 < base && base <= 16 )) {
+                                if ((base >= 2 && base <= 16 )) {
                                     int result_sum = int_num2 + int_num1;
                                     int result_multi = int_num2 * int_num1;
                                     String st_sum = Ex1.int2Number(result_sum, base);

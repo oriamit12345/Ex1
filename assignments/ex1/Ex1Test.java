@@ -94,7 +94,7 @@ public class Ex1Test {
             boolean ok = Ex1.All_number(GOOD[i]);
             assertTrue(ok);
         }
-        String[] NOT_GOOD = {"542ih", "00/124", " 12120"};
+        String[] NOT_GOOD = {"542ih", "00/124", " 12120","8676  9585", " "};
         for (int i = 0; i < GOOD.length; i = i + 1) {
             boolean not_ok = Ex1.All_number(NOT_GOOD[i]);
             assertFalse(not_ok);
