@@ -71,8 +71,15 @@ public class Ex1Test {
 
     @Test
     void maxIndexTest() {
-        // implement this test
-    }
+            String[][] s1_arr = {{"1b2","01b2", "123bA", "ABbG"}, {"0bA", "589bA","58","1011b2"},{"7DBbG","11100010111b2","214b8",}};
+            int[] i1_true_arr ={171,589,2011};
+
+            for(int i = 0; i < i1_true_arr.length; i = i + 1){
+                int i1_to_int = Ex1.maxIndex (s1_arr [i]);
+                int i1_true = i1_true_arr [i] ;
+                assertEquals(i1_true, i1_to_int, "numbers not match! expected value was: " + i1_true + " received: " + i1_to_int);
+            }
+        }
 
 
     @Test
