@@ -12,8 +12,8 @@ public class Ex1Test {
 
     @Test
     void number2Int_Test() {
-        String[] s1_arr = {"1b2","01b2", "123bA", "ABbG", "0bA", "589","58BA","1011b2"};
-        int[] s1_true_arr ={1,1,123,171,0,589,-1,11};
+        String[] s1_arr = {"1b2","01b2", "123bA", "ABbG", "0bA", "589","58BA","1011b2","0b8"};
+        int[] s1_true_arr ={1,1,123,171,0,589,-1,11,0};
 
         for(int i = 0; i < s1_arr.length; i = i + 1){
             String s1 = s1_arr [i] ;
@@ -57,7 +57,7 @@ public class Ex1Test {
     void int2Number_test() {
         int[] i1_number_arr ={728,728,42,100,2020,256,17};
         int[] i1_base_arr ={16,4,2,2,16,8,17};
-        String[] s1_true_arr = {"2D8b16","23120b4", "101010b2", "1100100b2", "7E4b16","400b8","ERR: wrong base, should be [2,16], got (17)"};
+        String[] s1_true_arr = {"2D8bG","23120b4", "101010b2", "1100100b2", "7E4bG","400b8","ERR: wrong base, should be [2,16], got (17)"};
         // A loop that goes through each value in the arrays and performs the test
         for(int i = 0; i < i1_number_arr.length; i = i + 1){
             // Current base
