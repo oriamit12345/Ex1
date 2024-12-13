@@ -106,6 +106,7 @@ public class Ex1 {
                 result = result / base;
                 counter = counter + 1;
             }
+            // Creates an array of appropriate size for true results
             // Reverse the order of the digits so the result is correct
             char[] good_collection = new char[counter] ;
             int loca_go = counter - 1 ;
