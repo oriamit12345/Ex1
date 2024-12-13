@@ -30,7 +30,7 @@ public class Ex1Main {
                                 System.out.println("Enter a base for output: (a number [2,16])");
                                 Scanner in = new Scanner(System.in);
                                 int base = in.nextInt();
-                                if (!(1 < base && base <= 16 )) {
+                                if ((1 < base && base <= 16 )) {
                                     int result_sum = int_num2 + int_num1;
                                     int result_multi = int_num2 * int_num1;
                                     String st_sum = Ex1.int2Number(result_sum, base);
@@ -43,16 +43,15 @@ public class Ex1Main {
                                     String st_max_arr = Ex1.int2Number(int_max_arr, base);
                                     System.out.println("Max number over " + Arrays.toString(st_arr) + " is: " + st_max_arr);
                                 }
-
                                 else {System.out.println("ERR: wrong base, should be [2,16], got (" + base + ')');}
                             }
-                            else {System.out.println("num2 = " + num2 + "is number: false , value: -1");}
+                            else {System.out.println("num2 = " + num2 + " is number: false , value: -1");}
                         }
 
                     }
 
                 }
-                else { System.out.println("num1 = " + num1 + "is number: false , value: -1");}
+                else { System.out.println("num1 = " + num1 + " is number: false , value: -1");}
             }
             System.out.println("quiting now...");
         }
