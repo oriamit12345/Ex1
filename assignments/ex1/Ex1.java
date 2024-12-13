@@ -22,15 +22,15 @@ public class Ex1 {
      * @param num a String representing a number in basis [2,16]
      * @return
      */
-    public static int number2Int(String MY_number3) {
-        if (isNumber(MY_number3)) {
-            if (All_number(MY_number3)) {
-                int decimal_value = Integer.parseInt(MY_number3, 10);
+    public static int number2Int(String num) {
+        if (isNumber(num)) {
+            if (All_number(num)) {
+                int decimal_value = Integer.parseInt(num, 10);
                 return decimal_value;
             }
-            int siz = MY_number3.length();
-            String st1_num = MY_number3.substring(0, siz - 2);
-            char ch2_base = MY_number3.charAt(siz - 1);
+            int siz = num.length();
+            String st1_num = num.substring(0, siz - 2);
+            char ch2_base = num.charAt(siz - 1);
             int int_base;
             if (ch2_base <= '9') {
                 char conversion_assistant = '0';
@@ -53,11 +53,11 @@ public class Ex1 {
      * @param a String representing a number
      * @return true iff the given String is in a number format
      */
-    public static boolean isNumber(String MY_number) {
-        if (All_number(MY_number)) {
+    public static boolean isNumber(String a) {
+        if (All_number(a)) {
             return true;
         }
-        if (Number_with_base(MY_number)) {
+        if (Number_with_base(a)) {
             return true;
         }
         return false;
@@ -122,12 +122,11 @@ public class Ex1 {
      * @return true iff the two numbers have the same values.
      */
     public static boolean equals(String n1, String n2) {
-        boolean ans = true;
-        // add your code here
-
-        ////////////////////
-        return ans;
+        int int_n1 = number2Int(n1) ;
+        int int_n2 = number2Int(n2) ;
+        return int_n1 == int_n2;
     }
+
 
     /**
      * This static function search for the array index with the largest number (in value).
@@ -137,11 +136,11 @@ public class Ex1 {
      * @param arr an array of numbers
      * @return the index in the array in with the largest number (in value).
      */
-    public static int maxIndex(String[] st_arr) {
-        int int_max_arr = Ex1.number2Int(st_arr [0]);
+    public static int maxIndex(String[] arr) {
+        int int_max_arr = Ex1.number2Int(arr [0]);
         int int_max_arr_check ;
-        for(int i = 0 ; i < st_arr.length ; i = i + 1 ){
-            int_max_arr_check = Ex1.number2Int(st_arr [i]);
+        for(int i = 0 ; i < arr.length ; i = i + 1 ){
+            int_max_arr_check = Ex1.number2Int(arr [i]);
             if (int_max_arr < int_max_arr_check ){
                 int_max_arr = int_max_arr_check ;
             }
